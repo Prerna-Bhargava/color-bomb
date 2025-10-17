@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { sdk } from "@farcaster/miniapp-sdk";
 
 const colors = [
   "Red", "Blue", "Green", "Yellow", "Purple", "Orange",
@@ -137,6 +138,14 @@ const ColorStroopGameHard = () => {
       }
     `;
     document.head.appendChild(style);
+
+    (async () => {
+      try {
+        await sdk.actions.ready();
+      } catch (err) {
+        console.error("Farcaster ready error:", err);
+      }
+    })();
   }, []);
 
   return (
