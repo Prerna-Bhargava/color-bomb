@@ -1,4 +1,4 @@
-import PixelRunner from "../public/PixelRunner.js";
+import PixelRunner from "./PixelRunner.js";
 
 function App() {
   return <PixelRunner />;
